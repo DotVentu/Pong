@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs67j2dprwsr5"]
+[gd_scene load_steps=4 format=3 uid="uid://bs67j2dprwsr5"]
 
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_i0j48"]
 [ext_resource type="Texture2D" uid="uid://jgvewxbihuc5" path="res://Assets/paddle-blue.png" id="1_jqrbr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kje3"]
@@ -7,6 +8,7 @@ height = 102.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(100, 320)
+script = ExtResource("1_i0j48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
