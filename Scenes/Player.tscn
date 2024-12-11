@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs67j2dprwsr5"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_i0j48"]
-[ext_resource type="Texture2D" uid="uid://jgvewxbihuc5" path="res://Assets/paddle-blue.png" id="1_jqrbr"]
+[ext_resource type="Texture2D" uid="uid://cdx34pi6xshkk" path="res://Assets/wall-horizontal.png" id="2_h0tje"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kje3"]
-height = 102.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0kxm"]
+size = Vector2(20, 22)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(100, 320)
@@ -12,8 +12,11 @@ script = ExtResource("1_i0j48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.78091e-06, 1.32071)
 rotation = 1.5708
-texture = ExtResource("1_jqrbr")
+scale = Vector2(0.0185463, 1)
+texture = ExtResource("2_h0tje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_7kje3")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_m0kxm")

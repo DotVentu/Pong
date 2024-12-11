@@ -1,6 +1,6 @@
 extends Node2D
 
-const CENTER = Vector2(500, 330)
+const CENTER = Vector2(500, 324)
 var playerScore = 0
 var computerScore = 0
 

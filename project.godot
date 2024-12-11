@@ -18,3 +18,7 @@ config/icon="res://icon.svg"
 [display]
 
 window/size/viewport_width=1000
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.105882, 0.105882, 0.105882, 1)
