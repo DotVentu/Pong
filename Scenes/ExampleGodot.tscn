@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crevv4ciltwgq"]
+
+[ext_resource type="Script" path="res://Scripts/exampleGDscript.gd" id="1_vgvgf"]
+
+[node name="ExampleGodot" type="Node2D"]
+script = ExtResource("1_vgvgf")
