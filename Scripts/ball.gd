@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 var speed = 500
+var player
 
 func _ready():
-	setBallVelocity()
+	#player = get_parent().get_node("Player")
+	pass
+	
 	
 func setBallVelocity():
 	if randi() % 2 == 0:

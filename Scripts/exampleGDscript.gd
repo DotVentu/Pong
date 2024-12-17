@@ -66,7 +66,7 @@ func _ready():
 	#print("s " + str(num / arr.size()))
 
 
-func _process(delta):
+func _process(_delta):
 	#writeYourLevel()
 	pass
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7joogenbskxs"]
+[gd_scene load_steps=13 format=3 uid="uid://7joogenbskxs"]
 
 [ext_resource type="PackedScene" uid="uid://bs67j2dprwsr5" path="res://Scenes/Player.tscn" id="1_m6a6r"]
 [ext_resource type="Script" path="res://Scripts/pong.gd" id="1_xijgr"]
@@ -15,6 +15,10 @@ size = Vector2(1000, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q5pi"]
 size = Vector2(20, 606)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_igbx2"]
+a = Vector2(0, 318.108)
+b = Vector2(0, -316.132)
+
 [sub_resource type="LabelSettings" id="LabelSettings_bp5ub"]
 font = ExtResource("8_xolue")
 font_size = 60
@@ -24,15 +28,21 @@ script = ExtResource("1_xijgr")
 
 [node name="Player" parent="." instance=ExtResource("1_m6a6r")]
 position = Vector2(916.5, 324)
+collision_layer = 16
+collision_mask = 10
 
 [node name="Computer" parent="." instance=ExtResource("2_prs7i")]
 position = Vector2(81, 324)
+collision_layer = 16
+collision_mask = 10
 
 [node name="Ball" parent="." instance=ExtResource("3_ko1wo")]
 position = Vector2(500, 324)
+collision_mask = 22
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 position = Vector2(476, 9)
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TopWall"]
@@ -46,6 +56,7 @@ shape = SubResource("RectangleShape2D_kog55")
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
 position = Vector2(516, 638)
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomWall"]
@@ -59,7 +70,16 @@ shape = SubResource("RectangleShape2D_kog55")
 
 [node name="GoalLeft" type="Area2D" parent="."]
 position = Vector2(10, 360)
+collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GoalLeft"]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLeft/StaticBody2D"]
+position = Vector2(0, -36)
+shape = SubResource("RectangleShape2D_1q5pi")
 
 [node name="Sprite2D" type="Sprite2D" parent="GoalLeft"]
 position = Vector2(0, -36.5)
@@ -72,7 +92,16 @@ shape = SubResource("RectangleShape2D_1q5pi")
 
 [node name="GoalRight" type="Area2D" parent="."]
 position = Vector2(990, 361)
+collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GoalRight"]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalRight/StaticBody2D"]
+position = Vector2(0, -37)
+shape = SubResource("RectangleShape2D_1q5pi")
 
 [node name="Sprite2D" type="Sprite2D" parent="GoalRight"]
 position = Vector2(0, -37.5)
@@ -83,7 +112,24 @@ texture = ExtResource("6_3u2l3")
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_1q5pi")
 
-[node name="Middle-line" type="Sprite2D" parent="."]
+[node name="Middle" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Middle"]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle/StaticBody2D"]
+position = Vector2(500, 324)
+scale = Vector2(1.5, 1.01223)
+shape = SubResource("SegmentShape2D_igbx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
+position = Vector2(500, 324)
+scale = Vector2(1.5, 1.01223)
+shape = SubResource("SegmentShape2D_igbx2")
+
+[node name="Middle-line" type="Sprite2D" parent="Middle"]
 position = Vector2(500, 324)
 scale = Vector2(1.5, 1.01223)
 texture = ExtResource("7_5wbno")
