@@ -8,6 +8,9 @@
   - [X] Ball bounce mechanics
   - [X] Basic AI movement for the computer
   - [X] Score tracking for both player and computer
+  - [X] Player movement by mouse
+  - [X] Updated collision mechanics
+  - [X] Fixed bugs to ensure only the ball interacts with the goals
 
 - [ ] Menu
   - [ ] Start game button
