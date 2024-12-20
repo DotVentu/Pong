@@ -12,9 +12,9 @@ script = ExtResource("1_i0j48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6.29091e-06, 1.73784)
+position = Vector2(-5.33204e-06, 1.47296)
 rotation = 1.5708
-scale = Vector2(0.0192485, 1)
+scale = Vector2(0.0193599, 1)
 texture = ExtResource("2_h0tje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
